@@ -394,6 +394,38 @@
       ]
     },
     {
+      "description": "VSCode: #: Cut (Ctrl+x)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VSCode: #: Cursor: Move Word Begin (Ctrl+←)",
       "manipulators": [
         {
@@ -526,23 +558,23 @@
       ]
     },
     {
-      "description": "VSCode: #: Cursor: Move to Line Begin (fn)",
+      "description": "VSCode: #: Delete Word Left (left_control)",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "left_arrow",
+            "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
-                "fn"
+                "left_control"
               ]
             }
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "delete_or_backspace",
               "modifiers": [
-                "left_command"
+                "left_option"
               ]
             }
           ],
@@ -558,21 +590,21 @@
       ]
     },
     {
-      "description": "VSCode: #: Cursor: Move to Line End (fn)",
+      "description": "VSCode: Quick Fix (Ctrl+.)",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "right_arrow",
+            "key_code": "period",
             "modifiers": {
               "mandatory": [
-                "fn"
+                "left_control"
               ]
             }
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "period",
               "modifiers": [
                 "left_command"
               ]
@@ -704,6 +736,74 @@
             {
               "key_code": "a",
               "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VSCode: Select: Add Cursor Above (Ctrl+left_command+↑)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "up_arrow",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_option",
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VSCode: Select: Add Cursor Below (Ctrl+left_command+↓)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "down_arrow",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_option",
                 "left_command"
               ]
             }
